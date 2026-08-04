@@ -61,9 +61,8 @@ export function Home() {
       {/* Stats Strip */}
       <section className="py-12 border-b border-[var(--border-color)] bg-[var(--bg-color)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             {[
-              { label: "CGPA (First Technical University)", value: "4.48/5" },
               { label: "Developers Mentored", value: "200+" },
               { label: "Lighthouse Performance", value: "100%" },
               { label: "Production Apps Shipped", value: "3+" }

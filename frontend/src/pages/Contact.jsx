@@ -28,6 +28,7 @@ export function Contact() {
 
       setStatus('success');
       setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setStatus('idle'), 3000);
     } catch (error) {
       console.error('Contact form error:', error);
       setStatus('error');
@@ -39,16 +40,9 @@ export function Contact() {
     <div className="pt-24 pb-32">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="animate-fade-in-up">
-          <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
-            <h1 className="mb-0">Get in Touch</h1>
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full text-accent text-sm font-medium">
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-              Actively seeking New Grad / Junior roles
-            </div>
-          </div>
-          
+          <h1 className="mb-6">Get in Touch</h1>
           <p className="text-xl text-[var(--text-muted)] mb-12">
-            I'm currently exploring opportunities for full-time Software Engineering roles starting in 2024. I am also open to discussing product design work, software architecture, or partnership opportunities.
+            I'm always open to discussing product design work, software architecture, or partnership opportunities.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
