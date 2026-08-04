@@ -1,21 +1,17 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 export function ProjectCard({ project, index = 0 }) {
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group flex flex-col border border-[var(--border-color)] bg-[var(--bg-color)] rounded-2xl overflow-hidden hover:border-accent transition-colors duration-300"
+    <div 
+      className="group flex flex-col border border-[var(--border-color)] bg-[var(--bg-color)] rounded-2xl overflow-hidden hover:border-accent transition-colors duration-300 animate-fade-in-up"
     >
       <div className="aspect-[16/9] w-full overflow-hidden bg-[var(--border-color)] relative">
         <img 
           src={project.heroImage} 
           alt={project.title}
-          loading="lazy"
+          loading={index === 0 ? "eager" : "lazy"}
+          fetchPriority={index === 0 ? "high" : "auto"}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
@@ -44,6 +40,6 @@ export function ProjectCard({ project, index = 0 }) {
           View Case Study <ArrowRight size={18} />
         </Link>
       </div>
-    </motion.div>
+    </div>
   );
 }

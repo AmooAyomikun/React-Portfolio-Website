@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense, lazy } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { Moon, Sun, Menu, X, Command } from 'lucide-react';
 import { cn } from '../lib/utils';
-import { CommandPalette } from './CommandPalette';
+
+const CommandPalette = lazy(() => import('./CommandPalette').then(m => ({ default: m.CommandPalette })));
 
 function Navbar() {
   const [isDark, setIsDark] = useState(true);
@@ -90,6 +91,7 @@ function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 text-[var(--text-color)]"
+              aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -189,7 +191,9 @@ export function Layout() {
         <Outlet />
       </main>
       <Footer />
-      <CommandPalette />
+      <Suspense fallback={null}>
+        <CommandPalette />
+      </Suspense>
     </div>
   );
 }

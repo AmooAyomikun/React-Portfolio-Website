@@ -1,6 +1,5 @@
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Code2, Terminal, Database, Wrench, ArrowRight, ChevronRight, CheckCircle2 } from 'lucide-react';
+import { Code2, Terminal, Database, Wrench, ArrowRight, ChevronRight, CheckCircle2, GraduationCap, Users } from 'lucide-react';
 
 export function About() {
   return (
@@ -9,12 +8,7 @@ export function About() {
         
         <div className="space-y-32">
           {/* Hero / Intro */}
-          <motion.section 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-3xl"
-          >
+          <section className="max-w-3xl animate-fade-in-up">
             <h1 className="mb-8 text-5xl md:text-6xl tracking-tight">About Me</h1>
             <p className="text-2xl md:text-3xl text-[var(--text-color)] font-medium leading-snug mb-8">
               Hi, I'm Ayomikun Amoo — a Software Engineer who enjoys building digital products that solve real-world problems.
@@ -22,16 +16,10 @@ export function About() {
             <p className="text-xl text-[var(--text-muted)] leading-relaxed">
               I believe great software isn't just about writing code; it's about understanding people, solving meaningful problems, and creating experiences that are <span className="text-[var(--text-color)]">simple, reliable, and enjoyable</span> to use.
             </p>
-          </motion.section>
+          </section>
 
           {/* Journey / Experience Timeline */}
-          <motion.section 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start"
-          >
+          <section className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start animate-fade-in-up">
             <div className="md:col-span-4">
               <h2 className="text-3xl font-bold sticky top-24">Experience & Education</h2>
             </div>
@@ -66,15 +54,10 @@ export function About() {
                 </div>
               </div>
             </div>
-          </motion.section>
+          </section>
 
           {/* How I Build */}
-          <motion.section 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
-          >
+          <section className="animate-fade-in-up">
             <div className="mb-12">
               <h2 className="text-3xl font-bold mb-4">How I Build</h2>
               <p className="text-xl text-[var(--text-muted)]">My process for delivering reliable software.</p>
@@ -110,15 +93,10 @@ export function About() {
                 </div>
               ))}
             </div>
-          </motion.section>
+          </section>
 
           {/* Tech Stack */}
-          <motion.section 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
-          >
+          <section className="animate-fade-in-up">
             <h2 className="text-3xl font-bold mb-12">My Tech Stack</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               
@@ -187,15 +165,10 @@ export function About() {
               </div>
 
             </div>
-          </motion.section>
+          </section>
 
           {/* Why Work With Me */}
-          <motion.section 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
-          >
+          <section className="animate-fade-in-up">
             <div className="mb-12">
               <h2 className="text-3xl font-bold">Why Work With Me</h2>
             </div>
@@ -222,58 +195,62 @@ export function About() {
                 </div>
               ))}
             </div>
-          </motion.section>
+          </section>
 
-          {/* Beyond the Code & Currently */}
-          <motion.section 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24"
-          >
-            <div>
-              <h2 className="text-2xl font-bold mb-6">Beyond the Code</h2>
-              <div className="space-y-4 text-[var(--text-muted)] leading-relaxed">
-                <p>
-                  Outside of software development, I actively engage in research and write academic papers, constantly exploring new ideas and methodologies.
-                </p>
-                <p>
-                  I also enjoy learning new technologies, improving my engineering skills, and mentoring aspiring developers to share knowledge whenever I can.
-                </p>
-              </div>
+          {/* Research & Leadership */}
+          <section className="animate-fade-in-up">
+            <div className="mb-12">
+              <h2 className="text-3xl font-bold">Beyond Software Engineering</h2>
             </div>
             
-            <div>
-              <h2 className="text-2xl font-bold mb-6">Currently Focused On</h2>
-              <ul className="space-y-4">
-                {[
-                  "Building production-ready full-stack applications",
-                  "Deepening my knowledge of software architecture",
-                  "Learning cloud technologies and DevOps practices",
-                  "Contributing to open-source projects",
-                  "Preparing for graduate studies and international research"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-[var(--text-muted)]">
-                    <ChevronRight className="text-accent shrink-0 mt-1" size={18} />
-                    <span className="leading-relaxed">{item}</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Research & Academia */}
+              <div className="p-8 border border-[var(--border-color)] rounded-2xl bg-[var(--bg-color)] hover:border-accent transition-colors">
+                <div className="w-12 h-12 bg-[var(--border-color)] rounded-xl flex items-center justify-center text-accent mb-6">
+                  <GraduationCap size={24} />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Research & Academia</h3>
+                <p className="text-[var(--text-muted)] leading-relaxed mb-6">
+                  Outside of commercial software development, I actively engage in academic research. I write and contribute to research papers, constantly exploring new technological methodologies and algorithmic optimizations. This research-driven approach allows me to solve complex engineering problems with academic rigor.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3 text-sm text-[var(--text-muted)]">
+                    <ChevronRight className="text-accent shrink-0 mt-0.5" size={16} />
+                    <span>Preparing for graduate studies and international research.</span>
                   </li>
-                ))}
-              </ul>
+                  <li className="flex items-start gap-3 text-sm text-[var(--text-muted)]">
+                    <ChevronRight className="text-accent shrink-0 mt-0.5" size={16} />
+                    <span>Applying rigorous data analysis to software architecture.</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Leadership & Mentoring */}
+              <div className="p-8 border border-[var(--border-color)] rounded-2xl bg-[var(--bg-color)] hover:border-accent transition-colors">
+                <div className="w-12 h-12 bg-[var(--border-color)] rounded-xl flex items-center justify-center text-accent mb-6">
+                  <Users size={24} />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Leadership & Mentoring</h3>
+                <p className="text-[var(--text-muted)] leading-relaxed mb-6">
+                  As the former Welfare Director for NACOS, I discovered a passion for community building and knowledge sharing. I have successfully mentored over 200 students in frontend development, helping them build their first applications and break into the tech industry.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3 text-sm text-[var(--text-muted)]">
+                    <ChevronRight className="text-accent shrink-0 mt-0.5" size={16} />
+                    <span>Mentored 200+ students in React and modern JavaScript.</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm text-[var(--text-muted)]">
+                    <ChevronRight className="text-accent shrink-0 mt-0.5" size={16} />
+                    <span>Led student welfare initiatives as NACOS Director.</span>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </motion.section>
+          </section>
 
           {/* CTA */}
-          <motion.section 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="relative overflow-hidden rounded-3xl border border-[var(--border-color)] bg-[var(--bg-color)] p-12 md:p-20 text-center">
-              {/* Subtle background glow effect */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
-              
+          <section className="animate-fade-in-up">
+            <div className="relative overflow-hidden rounded-3xl border border-[var(--border-color)] bg-[var(--bg-color)] p-12 md:p-20 text-center hover:border-accent transition-colors">
               <div className="relative z-10">
                 <h2 className="text-4xl font-bold mb-6 text-[var(--text-color)]">Let's Connect</h2>
                 <p className="text-xl text-[var(--text-muted)] mb-10 max-w-2xl mx-auto leading-relaxed">
@@ -288,7 +265,7 @@ export function About() {
                 </Link>
               </div>
             </div>
-          </motion.section>
+          </section>
 
         </div>
 

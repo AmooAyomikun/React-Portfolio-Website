@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Mail, Code2 as Github, Briefcase as Linkedin, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 export function Contact() {
@@ -39,14 +38,17 @@ export function Contact() {
   return (
     <div className="pt-24 pb-32">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h1 className="mb-6">Get in Touch</h1>
+        <div className="animate-fade-in-up">
+          <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
+            <h1 className="mb-0">Get in Touch</h1>
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full text-accent text-sm font-medium">
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+              Actively seeking New Grad / Junior roles
+            </div>
+          </div>
+          
           <p className="text-xl text-[var(--text-muted)] mb-12">
-            I'm always open to discussing product design work, software architecture, or partnership opportunities.
+            I'm currently exploring opportunities for full-time Software Engineering roles starting in 2024. I am also open to discussing product design work, software architecture, or partnership opportunities.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -130,9 +132,9 @@ export function Contact() {
               <div>
                 <h3 className="text-lg font-semibold mb-4">Direct Contact</h3>
                 <div className="space-y-4">
-                  <a href="mailto:hello@example.com" className="flex items-center gap-3 text-[var(--text-muted)] hover:text-accent transition-colors">
+                  <a href="mailto:amooquadri555@gmail.com" className="flex items-center gap-3 text-[var(--text-muted)] hover:text-accent transition-colors">
                     <Mail size={20} />
-                    hello@example.com
+                    amooquadri555@gmail.com
                   </a>
                   <a href="https://www.linkedin.com/in/ayomikun-amoo-6b836428b" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[var(--text-muted)] hover:text-accent transition-colors">
                     <Linkedin size={20} />
@@ -144,9 +146,33 @@ export function Contact() {
                   </a>
                 </div>
               </div>
+
+              <div className="pt-8 border-t border-[var(--border-color)]">
+                <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="font-medium text-[var(--text-color)] mb-1 text-sm">What roles are you looking for?</h4>
+                    <p className="text-sm text-[var(--text-muted)] leading-relaxed">
+                      I am actively seeking Junior or New Grad Software Engineer roles, with a focus on Frontend or Full-Stack development.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-[var(--text-color)] mb-1 text-sm">Are you open to relocation?</h4>
+                    <p className="text-sm text-[var(--text-muted)] leading-relaxed">
+                      Yes, I am open to relocating for the right opportunity. I am also highly comfortable working in remote or hybrid environments.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-[var(--text-color)] mb-1 text-sm">What is your primary tech stack?</h4>
+                    <p className="text-sm text-[var(--text-muted)] leading-relaxed">
+                      My strongest stack is React/Tailwind for the frontend, and Node.js or Python (Django) for the backend, typically using PostgreSQL or Supabase.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

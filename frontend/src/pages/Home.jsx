@@ -1,9 +1,10 @@
+import React, { Suspense, lazy } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { Layers, Terminal, BookOpen } from 'lucide-react';
 import { ProjectCard } from '../components/ProjectCard';
-import { GithubActivity } from '../components/GithubActivity';
+
+const GithubActivity = lazy(() => import('../components/GithubActivity').then(m => ({ default: m.GithubActivity })));
 import { projects } from '../lib/data';
-import heroImg from '../assets/professional image.png';
 
 export function Home() {
   const featuredProjects = projects.slice(0, 3);
@@ -13,15 +14,10 @@ export function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center pt-20 pb-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="flex flex-col-reverse md:flex-row items-center gap-12 w-full">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="max-w-3xl flex-1"
-            >
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 w-full">
+            <div className="max-w-3xl flex-1 animate-fade-in-up">
               <h1 className="mb-2">
-                👋 Hi, I'm <span className="text-accent">Ayomikun Amoo</span>
+                Hi, I'm <span className="text-accent">Ayomikun Amoo</span>
               </h1>
               <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[var(--text-color)]">Software Engineer</h2>
               <p className="text-xl text-[var(--text-muted)] font-medium mb-8">Frontend Developer • Full Stack Developer</p>
@@ -47,18 +43,13 @@ export function Home() {
                   Get In Touch
                 </Link>
               </div>
-            </motion.div>
+            </div>
             
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex-1 w-full flex justify-center md:justify-end"
-            >
-              <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-[3rem] rotate-3 overflow-hidden border-4 border-accent/20 bg-[var(--border-color)] shadow-2xl transition-transform hover:rotate-0 duration-500">
-                <img src={heroImg} alt="Quadri Ayomikun Amoo" className="w-full h-full object-cover object-top" />
+            <div className="flex-1 w-full flex justify-center md:justify-end animate-fade-in-scale">
+              <div className="relative w-56 h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-[2rem] overflow-hidden border border-[var(--border-color)] bg-[var(--bg-color)] shadow-xl transition-transform hover:-translate-y-2 duration-500">
+                <img src="/professional-image.webp" alt="Quadri Ayomikun Amoo" className="w-full h-full object-cover object-top" loading="eager" fetchPriority="high" />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
         
@@ -72,10 +63,10 @@ export function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { label: "Production Apps Shipped", value: "3+" },
-              { label: "Years Building", value: "2+" },
-              { label: "Frontend Focus", value: "React + Tailwind" },
-              { label: "Backend Focus", value: "Django + DRF" }
+              { label: "CGPA (First Technical University)", value: "4.48/5" },
+              { label: "Developers Mentored", value: "200+" },
+              { label: "Lighthouse Performance", value: "100%" },
+              { label: "Production Apps Shipped", value: "3+" }
             ].map((stat, idx) => (
               <div key={idx} className="p-6 border border-[var(--border-color)] rounded-2xl shadow-sm hover:border-accent transition-colors">
                 <div className="text-3xl font-bold text-accent mb-2">{stat.value}</div>
@@ -86,10 +77,56 @@ export function Home() {
         </div>
       </section>
 
+      {/* Core Engineering Pillars */}
+      <section className="py-24 border-b border-[var(--border-color)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="mb-4 text-3xl md:text-4xl">Core Engineering Pillars</h2>
+            <p className="text-xl text-[var(--text-muted)]">
+              The foundational principles I bring to every software project I work on.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-8 bg-[var(--bg-color)] border border-[var(--border-color)] rounded-2xl hover:border-accent transition-all hover:-translate-y-1">
+              <div className="w-14 h-14 bg-[var(--border-color)] rounded-xl flex items-center justify-center text-accent mb-6">
+                <Layers size={28} />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Frontend Excellence</h3>
+              <p className="text-[var(--text-muted)] leading-relaxed">
+                Building accessible, high-performance, and pixel-perfect user interfaces using modern tooling like React and Tailwind CSS.
+              </p>
+            </div>
+            
+            <div className="p-8 bg-[var(--bg-color)] border border-[var(--border-color)] rounded-2xl hover:border-accent transition-all hover:-translate-y-1">
+              <div className="w-14 h-14 bg-[var(--border-color)] rounded-xl flex items-center justify-center text-accent mb-6">
+                <Terminal size={28} />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Robust Backends</h3>
+              <p className="text-[var(--text-muted)] leading-relaxed">
+                Architecting secure, scalable APIs and reliable databases using Django, Node.js, and PostgreSQL to support complex data operations.
+              </p>
+            </div>
+
+            <div className="p-8 bg-[var(--bg-color)] border border-[var(--border-color)] rounded-2xl hover:border-accent transition-all hover:-translate-y-1">
+              <div className="w-14 h-14 bg-[var(--border-color)] rounded-xl flex items-center justify-center text-accent mb-6">
+                <BookOpen size={28} />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Research-Driven</h3>
+              <p className="text-[var(--text-muted)] leading-relaxed">
+                Applying rigorous academic research methodologies to software architecture, resulting in well-documented and deeply analyzed solutions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* GitHub Activity Section */}
-      <section className="pt-24 pb-24">
+      <section className="pt-24 pb-24 min-h-[400px]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <GithubActivity />
+          <Suspense fallback={<div className="flex justify-center items-center h-64 text-[var(--text-muted)]">Loading GitHub Activity...</div>}>
+            <GithubActivity />
+          </Suspense>
         </div>
       </section>
 
