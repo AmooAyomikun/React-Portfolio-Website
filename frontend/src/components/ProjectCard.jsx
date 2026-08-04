@@ -15,6 +15,7 @@ export function ProjectCard({ project, index = 0 }) {
         <img 
           src={project.heroImage} 
           alt={project.title}
+          loading="lazy"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />

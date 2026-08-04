@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Code2, Terminal, Database, Wrench, ArrowRight, ChevronRight } from 'lucide-react';
+import { Code2, Terminal, Database, Wrench, ArrowRight, ChevronRight, CheckCircle2 } from 'lucide-react';
 
 export function About() {
   return (
@@ -24,7 +24,7 @@ export function About() {
             </p>
           </motion.section>
 
-          {/* Journey */}
+          {/* Journey / Experience Timeline */}
           <motion.section 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -33,19 +33,42 @@ export function About() {
             className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start"
           >
             <div className="md:col-span-4">
-              <h2 className="text-3xl font-bold sticky top-24">My Journey</h2>
+              <h2 className="text-3xl font-bold sticky top-24">Experience & Education</h2>
             </div>
-            <div className="md:col-span-8 space-y-6 text-lg text-[var(--text-muted)] leading-relaxed">
-              <p>
-                My passion for software engineering began with a curiosity about how technology can improve everyday life. Since then, I've dedicated myself to building modern web applications that combine clean user experiences with scalable backend systems.
-              </p>
-              <p>
-                Along the way, I've developed projects across healthcare, fintech, and education, each challenging me to think beyond code and focus on building solutions that people genuinely find useful.
-              </p>
+            <div className="md:col-span-8">
+              <div className="relative border-l border-[var(--border-color)] ml-3 space-y-12 pb-4">
+                <div className="relative pl-8 group">
+                  <div className="absolute w-6 h-6 bg-[var(--bg-color)] border-2 border-accent rounded-full -left-[13px] top-1 group-hover:bg-accent transition-colors" />
+                  <div className="text-sm text-[var(--text-muted)] mb-1 font-medium">Present</div>
+                  <h3 className="text-xl font-bold text-[var(--text-color)] mb-1">Frontend Developer Intern</h3>
+                  <h4 className="text-lg text-accent mb-3">Circle Orange</h4>
+                  <p className="text-[var(--text-muted)] leading-relaxed">
+                    Building and optimizing responsive user interfaces for modern web applications using React and Tailwind CSS.
+                  </p>
+                </div>
+                <div className="relative pl-8 group">
+                  <div className="absolute w-6 h-6 bg-[var(--bg-color)] border-2 border-[var(--border-color)] rounded-full -left-[13px] top-1 group-hover:border-accent transition-colors" />
+                  <div className="text-sm text-[var(--text-muted)] mb-1 font-medium">2023 - 2024</div>
+                  <h3 className="text-xl font-bold text-[var(--text-color)] mb-1">Research Assistant</h3>
+                  <h4 className="text-lg text-[var(--text-muted)] mb-3">NYSC</h4>
+                  <p className="text-[var(--text-muted)] leading-relaxed">
+                    Strengthened research, analytical, and problem-solving abilities while supporting academic research initiatives.
+                  </p>
+                </div>
+                <div className="relative pl-8 group">
+                  <div className="absolute w-6 h-6 bg-[var(--bg-color)] border-2 border-[var(--border-color)] rounded-full -left-[13px] top-1 group-hover:border-accent transition-colors" />
+                  <div className="text-sm text-[var(--text-muted)] mb-1 font-medium">2021 - 2024</div>
+                  <h3 className="text-xl font-bold text-[var(--text-color)] mb-1">BSc. Software Engineering</h3>
+                  <h4 className="text-lg text-[var(--text-muted)] mb-3">First Technical University</h4>
+                  <p className="text-[var(--text-muted)] leading-relaxed">
+                    Graduated with a CGPA of 4.48/5.00. Served as Welfare Director for NACOS and mentored over 200 students in frontend development.
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.section>
 
-          {/* What I Build */}
+          {/* How I Build */}
           <motion.section 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -53,32 +76,37 @@ export function About() {
             transition={{ duration: 0.5 }}
           >
             <div className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">What I Build</h2>
-              <p className="text-xl text-[var(--text-muted)]">I enjoy building frontend and full stack web applications from the ground up.</p>
+              <h2 className="text-3xl font-bold mb-4">How I Build</h2>
+              <p className="text-xl text-[var(--text-muted)]">My process for delivering reliable software.</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 {
-                  name: "My Health Compass",
-                  desc: "An AI-powered healthcare management platform that helps patients track medical records, monitor health trends, and generate intelligent health reports."
+                  title: "1. Spec before code",
+                  desc: "I write a clear specification and understand the requirements fully before writing any code."
                 },
                 {
-                  name: "SkillBridge",
-                  desc: "A peer-to-peer skill exchange platform that enables people to learn by trading knowledge instead of paying for courses."
+                  title: "2. Build in small increments",
+                  desc: "I break down complex problems into small, testable increments to maintain momentum and catch bugs early."
                 },
                 {
-                  name: "DebtFree",
-                  desc: "A social finance platform that simplifies bill splitting, community savings, shared expenses, and peer-to-peer financial support."
+                  title: "3. Focus on performance",
+                  desc: "I optimize for speed and accessibility from the start, ensuring applications load fast and work for everyone."
+                },
+                {
+                  title: "4. Disciplined version control",
+                  desc: "I keep a clean and descriptive git history so that the context of changes is always preserved."
                 }
-              ].map((project, idx) => (
-                <div key={idx} className="p-8 border border-[var(--border-color)] rounded-2xl bg-gradient-to-b from-[var(--bg-color)] to-transparent hover:border-accent transition-all group flex flex-col h-full">
-                  <h3 className="font-bold text-xl mb-4 text-[var(--text-color)] group-hover:text-accent transition-colors">
-                    {project.name}
-                  </h3>
-                  <p className="text-[var(--text-muted)] leading-relaxed flex-grow">
-                    {project.desc}
-                  </p>
+              ].map((item, idx) => (
+                <div key={idx} className="flex gap-4 p-6 border border-[var(--border-color)] rounded-2xl bg-[var(--bg-color)] hover:border-accent transition-colors">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[var(--border-color)] flex items-center justify-center text-accent font-bold text-lg">
+                    {item.title.split('.')[0]}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">{item.title.split('. ')[1]}</h3>
+                    <p className="text-[var(--text-muted)] leading-relaxed">{item.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -96,12 +124,13 @@ export function About() {
               
               {/* Frontend Card */}
               <div className="p-8 border border-[var(--border-color)] rounded-2xl bg-[var(--bg-color)]">
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-2">
                   <div className="p-3 bg-[var(--border-color)] rounded-lg text-accent"><Code2 size={24} /></div>
                   <h3 className="text-2xl font-semibold">Frontend</h3>
                 </div>
+                <p className="text-[var(--text-muted)] text-sm mb-6 leading-relaxed">Building accessible, responsive, and interactive user interfaces.</p>
                 <div className="flex flex-wrap gap-2">
-                  {['React', 'TypeScript', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Tailwind CSS'].map(tech => (
+                  {['React', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS'].map(tech => (
                     <span key={tech} className="px-4 py-2 rounded-full border border-[var(--border-color)] text-sm text-[var(--text-muted)] bg-transparent hover:border-accent hover:text-accent transition-colors cursor-default">
                       {tech}
                     </span>
@@ -111,12 +140,13 @@ export function About() {
 
               {/* Backend Card */}
               <div className="p-8 border border-[var(--border-color)] rounded-2xl bg-[var(--bg-color)]">
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-2">
                   <div className="p-3 bg-[var(--border-color)] rounded-lg text-accent"><Terminal size={24} /></div>
                   <h3 className="text-2xl font-semibold">Backend</h3>
                 </div>
+                <p className="text-[var(--text-muted)] text-sm mb-6 leading-relaxed">Architecting scalable and secure APIs.</p>
                 <div className="flex flex-wrap gap-2">
-                  {['Node.js', 'Express.js', 'Python', 'Django'].map(tech => (
+                  {['Node.js', 'Python', 'Django', 'Django REST Framework'].map(tech => (
                     <span key={tech} className="px-4 py-2 rounded-full border border-[var(--border-color)] text-sm text-[var(--text-muted)] bg-transparent hover:border-accent hover:text-accent transition-colors cursor-default">
                       {tech}
                     </span>
@@ -126,12 +156,13 @@ export function About() {
 
               {/* Database Card */}
               <div className="p-8 border border-[var(--border-color)] rounded-2xl bg-[var(--bg-color)]">
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-2">
                   <div className="p-3 bg-[var(--border-color)] rounded-lg text-accent"><Database size={24} /></div>
-                  <h3 className="text-2xl font-semibold">Database & Cloud</h3>
+                  <h3 className="text-2xl font-semibold">Database</h3>
                 </div>
+                <p className="text-[var(--text-muted)] text-sm mb-6 leading-relaxed">Designing robust data models and ensuring data integrity.</p>
                 <div className="flex flex-wrap gap-2">
-                  {['PostgreSQL', 'Supabase', 'Prisma'].map(tech => (
+                  {['PostgreSQL', 'Supabase'].map(tech => (
                     <span key={tech} className="px-4 py-2 rounded-full border border-[var(--border-color)] text-sm text-[var(--text-muted)] bg-transparent hover:border-accent hover:text-accent transition-colors cursor-default">
                       {tech}
                     </span>
@@ -141,10 +172,11 @@ export function About() {
 
               {/* Tools Card */}
               <div className="p-8 border border-[var(--border-color)] rounded-2xl bg-[var(--bg-color)]">
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-2">
                   <div className="p-3 bg-[var(--border-color)] rounded-lg text-accent"><Wrench size={24} /></div>
                   <h3 className="text-2xl font-semibold">Tools</h3>
                 </div>
+                <p className="text-[var(--text-muted)] text-sm mb-6 leading-relaxed">Leveraging modern developer tools for efficient workflows and deployment.</p>
                 <div className="flex flex-wrap gap-2">
                   {['Git & GitHub', 'Vercel', 'Render', 'Figma'].map(tech => (
                     <span key={tech} className="px-4 py-2 rounded-full border border-[var(--border-color)] text-sm text-[var(--text-muted)] bg-transparent hover:border-accent hover:text-accent transition-colors cursor-default">
@@ -154,6 +186,41 @@ export function About() {
                 </div>
               </div>
 
+            </div>
+          </motion.section>
+
+          {/* Why Work With Me */}
+          <motion.section 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="mb-12">
+              <h2 className="text-3xl font-bold">Why Work With Me</h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "I ship with real error handling",
+                  desc: "I don't just build the happy path. I anticipate edge cases and implement robust error boundaries and fallback UI."
+                },
+                {
+                  title: "I document my decisions",
+                  desc: "I leave context behind. Through well-written PR descriptions and code comments, teams can pick up my work without me."
+                },
+                {
+                  title: "I focus on the user experience",
+                  desc: "Code is just a means to an end. My primary focus is always on delivering a seamless, accessible, and fast experience for the end-user."
+                }
+              ].map((item, idx) => (
+                <div key={idx} className="p-8 border border-[var(--border-color)] rounded-2xl bg-[var(--bg-color)] flex flex-col items-start hover:border-accent transition-colors">
+                  <CheckCircle2 className="text-accent mb-4" size={32} />
+                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                  <p className="text-[var(--text-muted)] leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
             </div>
           </motion.section>
 
@@ -169,13 +236,10 @@ export function About() {
               <h2 className="text-2xl font-bold mb-6">Beyond the Code</h2>
               <div className="space-y-4 text-[var(--text-muted)] leading-relaxed">
                 <p>
-                  Outside of software development, I enjoy learning new technologies, improving my engineering skills, and exploring better ways to solve problems through technology.
+                  Outside of software development, I actively engage in research and write academic papers, constantly exploring new ideas and methodologies.
                 </p>
                 <p>
-                  During my NYSC, I also served as a Research Assistant, where I strengthened my research, analytical, and problem-solving abilities while supporting academic research.
-                </p>
-                <p>
-                  I also enjoy mentoring aspiring developers and sharing knowledge whenever I can.
+                  I also enjoy learning new technologies, improving my engineering skills, and mentoring aspiring developers to share knowledge whenever I can.
                 </p>
               </div>
             </div>

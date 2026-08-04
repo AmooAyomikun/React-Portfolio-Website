@@ -7,7 +7,7 @@ export const projects = [
     description: "A high-performance headless e-commerce storefront designed to maximize conversion rates while maintaining a premium brand aesthetic.",
     liveUrl: "#",
     githubUrl: "#",
-    tags: ["React", "Next.js", "Tailwind CSS", "Stripe", "Sanity CMS"],
+    tags: ["HTML5", "CSS3", "JavaScript", "Django"],
     heroImage: "https://placehold.co/1200x675/1e1e1e/c6ff3d?text=Nexara+Storefront",
     gallery: [
       "https://placehold.co/800x450/1e1e1e/c6ff3d?text=Product+Page",
@@ -35,7 +35,7 @@ export const projects = [
     description: "A keyboard-first project management platform built for engineering teams, prioritizing speed and workflow integration.",
     liveUrl: "#",
     githubUrl: "#",
-    tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "Socket.io"],
+    tags: ["React", "Django", "Django Channels"],
     heroImage: "https://placehold.co/1200x675/1e1e1e/c6ff3d?text=Cadence+Dashboard",
     gallery: [
       "https://placehold.co/800x450/1e1e1e/c6ff3d?text=Kanban+Board",

@@ -20,13 +20,19 @@ export function Home() {
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               className="max-w-3xl flex-1"
             >
-              <h1 className="mb-6">
-                Full-Stack Engineer building high-performance 
-                <span className="text-accent"> digital experiences</span>.
+              <h1 className="mb-2">
+                👋 Hi, I'm <span className="text-accent">Ayomikun Amoo</span>
               </h1>
-              <p className="text-xl md:text-2xl text-[var(--text-muted)] mb-10 max-w-2xl font-body">
-                Specializing in React, TypeScript, and modern backend architectures to ship products that scale.
-              </p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[var(--text-color)]">Software Engineer</h2>
+              <p className="text-xl text-[var(--text-muted)] font-medium mb-8">Frontend Developer • Full Stack Developer</p>
+              <div className="text-lg md:text-xl text-[var(--text-muted)] mb-10 max-w-2xl font-body space-y-4">
+                <p>
+                  I build modern web applications with a strong focus on creating fast, intuitive, and accessible user experiences. While frontend is where I do my best work, I also enjoy building complete full-stack applications that solve real problems.
+                </p>
+                <p>
+                  I'm always learning, exploring new technologies, and turning ideas into products that people can use every day.
+                </p>
+              </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
                   to="/projects" 
@@ -61,8 +67,27 @@ export function Home() {
              style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, var(--border-color) 1px, transparent 0)', backgroundSize: '48px 48px' }} />
       </section>
 
+      {/* Stats Strip */}
+      <section className="py-12 border-b border-[var(--border-color)] bg-[var(--bg-color)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            {[
+              { label: "Production Apps Shipped", value: "3+" },
+              { label: "Years Building", value: "2+" },
+              { label: "Frontend Focus", value: "React + Tailwind" },
+              { label: "Backend Focus", value: "Django + DRF" }
+            ].map((stat, idx) => (
+              <div key={idx} className="p-6 border border-[var(--border-color)] rounded-2xl shadow-sm hover:border-accent transition-colors">
+                <div className="text-3xl font-bold text-accent mb-2">{stat.value}</div>
+                <div className="text-sm text-[var(--text-muted)] font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* GitHub Activity Section */}
-      <section className="pb-24">
+      <section className="pt-24 pb-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <GithubActivity />
         </div>

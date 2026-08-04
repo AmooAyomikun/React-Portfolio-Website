@@ -45,8 +45,8 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
-            <NavLink to="/" className="text-2xl font-display font-bold tracking-tight">
-              Dev<span className="text-accent">.</span>
+            <NavLink to="/" className="text-xl md:text-2xl font-display font-bold tracking-tight">
+              Amoo Quadri Ayomikun<span className="text-accent">.</span>
             </NavLink>
           </div>
 
@@ -135,7 +135,7 @@ function Footer() {
     <footer className="border-t border-[var(--border-color)] mt-auto py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-center md:text-left">
-          <p className="font-display font-semibold text-lg mb-1">Developer Portfolio</p>
+          <p className="font-display font-semibold text-lg mb-1">Amoo Quadri Ayomikun</p>
           <p className="text-meta text-[var(--text-muted)]">
             Built with React, Tailwind, and Framer Motion.
           </p>
