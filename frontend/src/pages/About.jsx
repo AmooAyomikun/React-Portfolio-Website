@@ -3,31 +3,18 @@ import { Link } from 'react-router-dom';
 import { Code2, Terminal, Database, Wrench, ArrowRight, ChevronRight } from 'lucide-react';
 
 export function About() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-  };
-
   return (
     <div className="pt-24 pb-32">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="space-y-32"
-        >
+        <div className="space-y-32">
           {/* Hero / Intro */}
-          <motion.section variants={itemVariants} className="max-w-3xl">
+          <motion.section 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-3xl"
+          >
             <h1 className="mb-8 text-5xl md:text-6xl tracking-tight">About Me</h1>
             <p className="text-2xl md:text-3xl text-[var(--text-color)] font-medium leading-snug mb-8">
               Hi, I'm Ayomikun Amoo — a Software Engineer who enjoys building digital products that solve real-world problems.
@@ -38,7 +25,13 @@ export function About() {
           </motion.section>
 
           {/* Journey */}
-          <motion.section variants={itemVariants} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+          <motion.section 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+            className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start"
+          >
             <div className="md:col-span-4">
               <h2 className="text-3xl font-bold sticky top-24">My Journey</h2>
             </div>
@@ -53,10 +46,15 @@ export function About() {
           </motion.section>
 
           {/* What I Build */}
-          <motion.section variants={itemVariants}>
+          <motion.section 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="mb-12">
               <h2 className="text-3xl font-bold mb-4">What I Build</h2>
-              <p className="text-xl text-[var(--text-muted)]">I enjoy building full-stack web applications from the ground up.</p>
+              <p className="text-xl text-[var(--text-muted)]">I enjoy building frontend and full stack web applications from the ground up.</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -87,7 +85,12 @@ export function About() {
           </motion.section>
 
           {/* Tech Stack */}
-          <motion.section variants={itemVariants}>
+          <motion.section 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="text-3xl font-bold mb-12">My Tech Stack</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               
@@ -155,7 +158,13 @@ export function About() {
           </motion.section>
 
           {/* Beyond the Code & Currently */}
-          <motion.section variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+          <motion.section 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24"
+          >
             <div>
               <h2 className="text-2xl font-bold mb-6">Beyond the Code</h2>
               <div className="space-y-4 text-[var(--text-muted)] leading-relaxed">
@@ -191,7 +200,12 @@ export function About() {
           </motion.section>
 
           {/* CTA */}
-          <motion.section variants={itemVariants}>
+          <motion.section 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="relative overflow-hidden rounded-3xl border border-[var(--border-color)] bg-[var(--bg-color)] p-12 md:p-20 text-center">
               {/* Subtle background glow effect */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
@@ -212,7 +226,7 @@ export function About() {
             </div>
           </motion.section>
 
-        </motion.div>
+        </div>
 
       </div>
     </div>

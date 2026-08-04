@@ -134,11 +134,11 @@ export function Contact() {
                     <Mail size={20} />
                     hello@example.com
                   </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[var(--text-muted)] hover:text-accent transition-colors">
+                  <a href="https://www.linkedin.com/in/ayomikun-amoo-6b836428b" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[var(--text-muted)] hover:text-accent transition-colors">
                     <Linkedin size={20} />
                     LinkedIn
                   </a>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[var(--text-muted)] hover:text-accent transition-colors">
+                  <a href="https://github.com/AmooAyomikun" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[var(--text-muted)] hover:text-accent transition-colors">
                     <Github size={20} />
                     GitHub
                   </a>

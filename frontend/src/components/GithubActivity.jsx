@@ -7,7 +7,7 @@ export function GithubActivity() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const username = import.meta.env.VITE_GITHUB_USERNAME || 'torvalds'; // Fallback for demo
+  const username = import.meta.env.VITE_GITHUB_USERNAME || 'AmooAyomikun'; // Fallback for demo
 
   useEffect(() => {
     const fetchActivity = async () => {

@@ -141,9 +141,9 @@ function Footer() {
           </p>
         </div>
         <div className="flex gap-6">
-          <a href="#" className="text-[var(--text-muted)] hover:text-accent transition-colors">GitHub</a>
-          <a href="#" className="text-[var(--text-muted)] hover:text-accent transition-colors">LinkedIn</a>
-          <a href="#" className="text-[var(--text-muted)] hover:text-accent transition-colors">Twitter</a>
+          <a href="https://github.com/AmooAyomikun" target="_blank" rel="noopener noreferrer" className="text-[var(--text-muted)] hover:text-accent transition-colors">GitHub</a>
+          <a href="https://www.linkedin.com/in/ayomikun-amoo-6b836428b" target="_blank" rel="noopener noreferrer" className="text-[var(--text-muted)] hover:text-accent transition-colors">LinkedIn</a>
+          <a href="https://x.com/ayomhykun" target="_blank" rel="noopener noreferrer" className="text-[var(--text-muted)] hover:text-accent transition-colors">Twitter (X)</a>
         </div>
         
         {/* Lighthouse Score Display */}

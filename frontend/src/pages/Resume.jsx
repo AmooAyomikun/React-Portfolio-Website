@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Download } from 'lucide-react';
 
 export function Resume() {
-  const resumeUrl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"; // Placeholder PDF
+  const resumeUrl = "/amoo-resume.pdf";
 
   return (
     <div className="pt-24 pb-32">
@@ -21,7 +21,7 @@ export function Resume() {
           </div>
           <a
             href={resumeUrl}
-            download="Resume.pdf"
+            download="Amoo_Quadri_Ayomikun_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-[var(--bg-dark)] font-semibold rounded-md hover:bg-accent-hover transition-colors shrink-0"
@@ -35,25 +35,14 @@ export function Resume() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="w-full aspect-[1/1.4] md:aspect-[16/11] bg-[var(--border-color)] rounded-xl border border-[var(--border-color)] overflow-hidden"
+          className="w-full aspect-[8.5/11] bg-white rounded-lg overflow-hidden shadow-xl border border-[var(--border-color)]"
         >
-          <object
-            data={resumeUrl}
+          <embed
+            src={resumeUrl}
             type="application/pdf"
             className="w-full h-full"
-          >
-            <div className="flex flex-col items-center justify-center h-full p-8 text-center bg-[var(--bg-color)]">
-              <p className="text-[var(--text-muted)] mb-4">It appears your browser doesn't support embedded PDFs.</p>
-              <a
-                href={resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-accent hover:underline font-medium"
-              >
-                Click here to view it directly.
-              </a>
-            </div>
-          </object>
+            title="Amoo Quadri Ayomikun Resume"
+          />
         </motion.div>
       </div>
     </div>
